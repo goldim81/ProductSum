@@ -7,9 +7,9 @@ public class Main {
     public static void main(String[] args) {
         Semaphore semaphore = new Semaphore(1-20);
         for (int i = 0; i < 20; i++) {
-            int rndA = new Random(50).nextInt();
-            int rndB = new Random(50).nextInt();
-            int rndC = new Random(50).nextInt();
+            int rndA = new Random().nextInt(50);
+            int rndB = new Random().nextInt(50);
+            int rndC = new Random().nextInt(50);
             new Thread(new Summator(rndA, rndB, rndC, semaphore)).start();
         }
         try {
